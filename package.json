@@ -1,0 +1,19 @@
+{
+  "name": "instagram_login",
+  "version": "1.0.0",
+  "description": "this rep can help you login to instagram with axios",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Matiiv Vasyl",
+  "license": "ISC",
+  "dependencies": {
+    "@peculiar/webcrypto": "1.1.1",
+    "axios": "^0.21.0",
+    "btoa": "^1.2.1",
+    "dotenv": "^8.2.0",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-sealedbox-js": "^1.2.0"
+  }
+}

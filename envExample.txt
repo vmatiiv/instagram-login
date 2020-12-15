@@ -1,0 +1,2 @@
+LOGIN = dumbMail@gmail.com
+PASSWORD = 123456
