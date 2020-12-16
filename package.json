@@ -1,6 +1,6 @@
 {
   "name": "@vmatiiv/instagram_login",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this rep can help you login to instagram with axios",
   "main": "index.js",
   "scripts": {
