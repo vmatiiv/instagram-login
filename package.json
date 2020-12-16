@@ -1,19 +1,32 @@
 {
-  "name": "instagram_login",
+  "name": "@vmatiiv/instagram_login",
   "version": "1.0.0",
   "description": "this rep can help you login to instagram with axios",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Matiiv Vasyl",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vmatiiv/instagram-login"
+  },
+  "keywords": [
+    "instagram",
+    "axios",
+    "nodejs"
+  ],
+  "author": "vmatiiv",
+  "license": "MIT",
   "dependencies": {
-    "@peculiar/webcrypto": "1.1.1",
+    "@peculiar/webcrypto": "^1.1.4",
     "axios": "^0.21.0",
     "btoa": "^1.2.1",
     "dotenv": "^8.2.0",
     "tweetnacl": "^1.0.3",
     "tweetnacl-sealedbox-js": "^1.2.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/vmatiiv/instagram-login/issues"
+  },
+  "homepage": "https://github.com/vmatiiv/instagram-login#readme"
 }

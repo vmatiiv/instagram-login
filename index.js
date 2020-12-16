@@ -25,23 +25,23 @@ const getCookies =  async (url) => {
         csrf
     }
 }
-const getPassword = async (data) => {
+const getPassword = async (data,password) => {
     const {ig_id,ig_pub_key,ig_key_version} = data
     const encData = {
         ig_id,
         ig_pub_key,
         ig_key_version,
-        password:`${process.env.PASSWORD}`
+        password
     }
     const enc_password = await encryptPassword(encData)
     return enc_password
 }
 
-const auth = async () => {
+module.exports = async (login,password) => {
     const data = await getCookies(LOGIN_PATH);
-    const enc_password = await getPassword(data);
+    const enc_password = await getPassword(data,password);
     const body = querystring.stringify({
-        username:`${process.env.LOGIN}`,
+        username:login,
         enc_password,
         quertParams:'{}',
         optIntoOneTap: false
@@ -50,11 +50,13 @@ const auth = async () => {
         'cookie': data.cookies,
         'x-csrftoken': data.csrf,
     }    
-
-    const post = await axios.post(LOGIN_AJAX,body,{headers:headers});
-    return post.headers[GET_COOKIES]
+    try{
+        const post = await axios.post(LOGIN_AJAX,body,{headers:headers});
+        if(!post.data.authenticated) throw new Error('wrong login or password');
+        return post.headers[GET_COOKIES]
+    
+    }catch(err){
+        throw err.message
+    }
 
 }
-
-auth()
-.then(res=>console.log(res))
